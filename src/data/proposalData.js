@@ -1,3 +1,8 @@
+import img1 from '../assets/Media.jpg';
+import img2 from '../assets/Media (2).jpg';
+import img3 from '../assets/Media (1).jpg';
+import img4 from '../assets/Media (3).jpg';
+
 export const proposalData = {
   herName: "Bhumi",
   yourName: "Pawan",
@@ -7,67 +12,67 @@ export const proposalData = {
   welcomeQuestion: "Will you give me a few minutes?",
 
   // Letter Section
-  letterMessage: "You mean the world to me. From the very first moment I saw you, I knew there was something different about you. Over time, you became my best friend, my safe place, and my greatest adventure. This is just a little reminder of how much I care about you.",
+  letterMessage: " Miss cutie App meri life ka sabse beautiful gift ho jo god ne mujhe diya hai. or mere liye sab kuch ho mera wolrd everthing, or mai aapse dur nahi hona chahta kabhi ,or mai aapki khusi ke liye sab kuch karna chahta hu or krunga, aapke sath time spent karna chahta hu aapke sath pura world ghumna chahta hu aapka har dream pura karna chahta hu, or ham sath rahenge jldi hi, bas yahi batana chahta hu mai kitna pyaar or aapki care karta hu jo words mai batana mushkil hai, bs koshis kar raha hu ish letter ke through.....,❤️❤️",
 
   // Story Section
   storyItems: [
     {
-      title: "First Conversation",
-      description: "That first time we talked, I couldn't stop smiling. It felt like I had known you forever."
+      title: "Aapki Smile 😊",
+      description: "Aap jab smile karti ho na bahut cute or pyari lagti ho to aap hamesha smile kiya karo smjhe aap.. ❤️"
     },
     {
-      title: "First Memory",
-      description: "Our first real memory together. We laughed until it hurt, and I never wanted that day to end."
+      title: "Aapka Soft or Caring Nature 💖",
+      description: "Aapka ek side Soft or caring hai jo gusse wale nature se alg hai , or ye side bhi aapka aapko best banata hai cutie .. ❤️"
     },
     {
-      title: "The Moment",
-      description: "The exact moment I realized you were the one. You were just being yourself, and I fell completely."
+      title: "Aapka Gussa 😠",
+      description: "Aapka gusse wala side bhi hai ek jo bahut khatrnak hai jishse bahut log darte bhi hai mai bhi hehe, but wo bhi pyaara lgta hai  ..❤️"
     },
     {
-      title: "Somewhere Along The Way",
-      description: "All the little moments between then and now that made me realize I want to keep choosing you."
+      title: "Or sabse main Aapki Beauty ✨",
+      description: "Aap bahut jada sundar or cute ho aapse sundar koi ni , m pura ka pura melt ho jata hu aapko dekhte hi Love..❤️"
     }
   ],
 
   // Memories Section
   memories: [
     {
-      image: "/images/memory1.jpg",
-      date: "That Smile",
-      caption: "One of my favorite moments."
+      image: img1,
+      date: "Aapki Smile",
+      caption: "kuch apne pas smbhali hui aapki smiles mai se ek."
     },
     {
-      image: "/images/memory2.jpg",
-      date: "Adventure",
-      caption: "We can go anywhere as long as we're together."
+      image: img2,
+      date: "First Meeting",
+      caption: "jab aapse pahli bar mila tha or hamari first memory."
     },
     {
-      image: "/images/memory3.jpg",
-      date: "Quiet Times",
-      caption: "Even doing nothing is everything with you."
+      image: img3,
+      date: "Ek or memory",
+      caption: "jab sirf aapke ek bolne pe bhaga aaya tha aapse milne ."
     },
     {
-      image: "/images/memory4.jpg",
+      image: img4,
       date: "Always You",
-      caption: "I wouldn't trade these memories for anything."
+      caption: "Mere Dil ki heartbeat..❤️❤️"
     }
   ],
 
   // Emotional Build Up Section
   emotionalMessages: [
-    "There's something I've wanted to tell you...",
-    "You became someone really special to me.",
-    "And somewhere along the way...",
-    "I started imagining you in my future.",
-    "Every day with you is a gift."
+    "Aage kuch hai jo mai aapko bolna chahta hu...",
+    "Aap mere liye sabse special ho..",
+    "mai aapko kabhi खोना nahi chahta",
+    "mai hamara future imagine karta hu aapke sath mai .",
+    "Aapke sath hi mai apni puri life chahta hu "
   ],
 
   // Proposal Section
   proposalMessage: {
-    part1: "I don't know exactly what the future holds...",
-    part2: "But I know I'd love to make more memories with you.",
-    part3: "So I wanted to ask you something...",
-    finalQuestion: "Will you be mine? ❤️"
+    part1: "Mai or wait nahi kar sakta  aapse ye bolne ke liye ",
+    part2: "Isiliye ye chhota sa effort kiya hai aapse puchne ke liye ",
+    part3: "So I wanted to ask you something miss Bhumi...",
+    finalQuestion: "I'm in love with you,\nwill you be mine? ❤️"
   },
 
   // Post-Proposal Messages

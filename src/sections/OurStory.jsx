@@ -13,9 +13,9 @@ const OurStory = ({ onNext }) => {
         transition={{ duration: 0.8 }}
         className="text-center mb-20"
       >
-        <h2 className="font-serif text-3xl md:text-4xl text-slate-800 mb-4 font-medium">Maybe this is where our story started...</h2>
+        <h2 className="font-serif text-3xl md:text-4xl text-slate-800 mb-4 font-medium">Kuch baatein jo mujhe aapki sabse achi lagti hain...</h2>
         <p className="text-slate-500 font-sans italic text-lg max-w-xl mx-auto">
-          "Some moments are small, but somehow they stay with us."
+          "You are beautiful inside and out."
         </p>
       </motion.div>
 

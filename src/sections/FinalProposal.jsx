@@ -114,7 +114,7 @@ const FinalProposal = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 6, duration: 1.5, ease: "easeOut" }}
-              className="font-serif text-4xl md:text-6xl lg:text-7xl text-blush-600 font-medium mb-16 text-glow"
+              className="font-serif text-4xl md:text-6xl lg:text-7xl text-blush-600 font-medium mb-16 text-glow whitespace-pre-line leading-tight"
             >
               {proposalData.proposalMessage.finalQuestion}
             </motion.h1>
@@ -133,9 +133,10 @@ const FinalProposal = () => {
               </button>
 
               <motion.button
-                onClick={handleThink}
+                onClick={handleYes} // If they manage to click, it still says YES
                 onHoverStart={moveNoButton}
-                onTapStart={moveNoButton}
+                onTouchStart={moveNoButton}
+                onPointerDown={moveNoButton}
                 animate={{ x: noButtonPos.x, y: noButtonPos.y }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="w-full sm:w-auto px-8 py-4 bg-white/70 backdrop-blur-sm text-slate-600 font-medium rounded-full shadow-sm hover:bg-white border border-white/80 transition-colors duration-300"
