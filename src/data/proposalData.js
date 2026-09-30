@@ -1,14 +1,14 @@
-import img1 from '../assets/Mediaa.jpg';
-import img2 from '../assets/Media (2).jpg';
-import img3 from '../assets/Media (1).jpg';
-import img4 from '../assets/Media (3).jpg';
+import img1 from '../Assets/first.jpg';
+import img2 from '../Assets/second.jpg';
+import img3 from '../Assets/third.jpg';
+import img4 from '../Assets/fourth.jpg';
 
-import col1 from '../assets/images/Media.jpg';
+import col1 from '../Assets/images/Media.jpg';
 import col2 from '../Assets/images/Media (1).jpg';
-import col3 from '../assets/images/Media (2).jpg';
-import col4 from '../assets/images/Media (3).jpg';
-import col5 from '../assets/images/Media (4).jpg';
-import col6 from '../assets/images/Media (5).jpg';
+import col3 from '../Assets/images/Media (2).jpg';
+import col4 from '../Assets/images/Media (3).jpg';
+import col5 from '../Assets/images/Media (4).jpg';
+import col6 from '../Assets/images/Media (5).jpg';
 
 export const proposalData = {
   herName: "Bhumi",
