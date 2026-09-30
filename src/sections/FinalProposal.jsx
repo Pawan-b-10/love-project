@@ -5,12 +5,15 @@ import { proposalData } from '../data/proposalData';
 import { Gift } from 'lucide-react';
 import BoyHand from '../components/BoyHand';
 import GirlHand from '../components/GirlHand';
-import { saveProposalResponse } from "../services/proposalService";
+import { saveProposalResponse, saveUserReply } from "../services/proposalService";
 
 const FinalProposal = () => {
-  const [response, setResponse] = useState(null); // null, 'yes_ring', 'yes_hurray', 'yes_gift', 'yes_collage', 'think'
+  const [response, setResponse] = useState(null); // null, 'yes_ring', 'yes_hurray', 'yes_gift', 'yes_collage', 'yes_reply', 'think'
   const [ringOn, setRingOn] = useState(false);
   const [noButtonPos, setNoButtonPos] = useState({ x: 0, y: 0 });
+  const [replyMessage, setReplyMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const moveNoButton = () => {
     const newX = Math.random() * 400 - 200;
@@ -348,8 +351,61 @@ const FinalProposal = () => {
               <p className="text-lg md:text-xl text-slate-500 italic font-sans mb-6">
                 Ye story ka end nahi, ye toh humare pyar ki khubsoorat shuruaat hai... ❤️
               </p>
-              <div className="text-4xl animate-pulse">♾️</div>
+              <div className="text-4xl animate-pulse mt-6 mb-8">♾️</div>
+              <button
+                onClick={() => setResponse('yes_reply')}
+                className="px-8 py-3 bg-white text-blush-500 rounded-full font-medium shadow-[0_0_20px_rgba(244,114,182,0.3)] hover:bg-blush-50 hover:shadow-[0_0_25px_rgba(244,114,182,0.5)] transition-all"
+              >
+                Aap kuch bolna chahte ho? 🥺
+              </button>
             </motion.div>
+          </motion.div>
+
+        ) : response === 'yes_reply' ? (
+          <motion.div
+            key="reply"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="w-full max-w-xl mx-auto glass-card p-8 rounded-3xl z-10"
+          >
+            <h2 className="font-serif text-3xl text-blush-600 mb-6 text-center">Aapke dil ki baat... ❤️</h2>
+            
+            {!isSubmitted ? (
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-slate-700 mb-2 font-medium">Kuch likhna chahti ho?</label>
+                  <textarea
+                    value={replyMessage}
+                    onChange={(e) => setReplyMessage(e.target.value)}
+                    className="w-full p-4 rounded-xl border border-blush-200 focus:outline-none focus:ring-2 focus:ring-blush-400 min-h-[120px] bg-white/50 backdrop-blur-sm"
+                    placeholder="Apni feelings yahan likho..."
+                  />
+                </div>
+
+                <button
+                  onClick={async () => {
+                    setIsSubmitting(true);
+                    await saveUserReply(replyMessage);
+                    setIsSubmitting(false);
+                    setIsSubmitted(true);
+                  }}
+                  disabled={isSubmitting || !replyMessage.trim()}
+                  className="w-full py-4 bg-blush-500 text-white rounded-full font-medium shadow-lg hover:bg-blush-600 transition-colors disabled:opacity-50 flex justify-center items-center"
+                >
+                  {isSubmitting ? "Bhej raha hu..." : "Bhej do ✨"}
+                </button>
+              </div>
+            ) : (
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                className="text-center py-8"
+              >
+                <div className="text-5xl mb-4">🥰</div>
+                <h3 className="text-2xl font-serif text-blush-600 mb-2">Mil gaya aapka message!</h3>
+                <p className="text-slate-600">Jaldi milte hain... I love you! ❤️</p>
+              </motion.div>
+            )}
           </motion.div>
 
         ) : (

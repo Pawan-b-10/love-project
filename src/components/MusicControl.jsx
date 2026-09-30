@@ -1,11 +1,41 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Music } from 'lucide-react';
 import { motion } from 'framer-motion';
+import mySong from '../Assets/song/mysong.mp3';
 
 const MusicControl = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
   const audioRef = useRef(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      const playPromise = audioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          setIsPlaying(true);
+        }).catch(error => {
+          console.log("Autoplay blocked, waiting for user interaction.", error);
+          setIsPlaying(false);
+        });
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const handlePlayMusicEvent = () => {
+      if (audioRef.current && audioRef.current.paused) {
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            setIsPlaying(true);
+          }).catch(e => console.error(e));
+        }
+      }
+    };
+    window.addEventListener('play-music', handlePlayMusicEvent);
+    return () => window.removeEventListener('play-music', handlePlayMusicEvent);
+  }, []);
 
   const togglePlay = () => {
     if (hasError) return;
@@ -13,20 +43,23 @@ const MusicControl = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
+        setIsPlaying(false);
       } else {
         const playPromise = audioRef.current.play();
         if (playPromise !== undefined) {
-          playPromise.catch(error => {
+          playPromise.then(() => {
+            setIsPlaying(true);
+          }).catch(error => {
             console.error("Audio playback failed:", error);
             setHasError(true);
           });
         }
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
   const handleError = () => {
+    console.error("Audio file error");
     setHasError(true);
   };
 
@@ -38,8 +71,9 @@ const MusicControl = () => {
     <div className="fixed top-6 right-6 z-50">
       <audio 
         ref={audioRef} 
-        src="/music/our-song.mp3" 
+        src={mySong} 
         loop 
+        autoPlay
         onError={handleError}
       />
       <motion.button

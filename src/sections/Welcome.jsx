@@ -35,7 +35,10 @@ const Welcome = ({ onNext }) => {
         </p>
 
         <button
-          onClick={onNext}
+          onClick={() => {
+            window.dispatchEvent(new Event('play-music'));
+            onNext();
+          }}
           className="group relative px-8 py-4 bg-white/80 backdrop-blur-md text-blush-700 font-medium rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:bg-white transition-all overflow-hidden flex items-center gap-3 animate-glow-pulse"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-blush-100/0 via-blush-100/50 to-blush-100/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />

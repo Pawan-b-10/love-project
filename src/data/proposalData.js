@@ -19,7 +19,7 @@ export const proposalData = {
   welcomeQuestion: "Will you give me a few minutes?",
 
   // Letter Section
-  letterMessage: " Miss cutie App meri life ka sabse beautiful gift ho jo god ne mujhe diya hai. or mere liye sab kuch ho mera wolrd everthing, or mai aapse dur nahi hona chahta kabhi ,or mai aapki khusi ke liye sab kuch karna chahta hu or krunga, aapke sath time spent karna chahta hu aapke sath pura world ghumna chahta hu aapka har dream pura karna chahta hu, or ham sath rahenge jldi hi, bas yahi batana chahta hu mai kitna pyaar or aapki care karta hu jo words mai batana mushkil hai, bs koshis kar raha hu ish letter ke through.....,❤️❤️",
+  letterMessage: " My cutie App meri life ka sabse beautiful gift ho jo god ne mujhe diya hai. or mere liye sab kuch ho mera wolrd everthing, or mai aapse dur nahi hona chahta kabhi ,or mai aapki khusi ke liye sab kuch karna chahta hu or krunga, aapke sath time spent karna chahta hu aapke sath pura world ghumna chahta hu aapka har dream pura karna chahta hu, or ham sath rahenge jldi hi, bas yahi batana chahta hu mai kitna pyaar or aapki care karta hu jo words mai batana mushkil hai, bs koshis kar raha hu ish letter ke through.....,❤️❤️",
 
   // Story Section
   storyItems: [
@@ -33,11 +33,11 @@ export const proposalData = {
     },
     {
       title: "Aapka Gussa 😠",
-      description: "Aapka gusse wala side bhi hai ek jo bahut khatrnak hai jishse bahut log darte bhi hai mai bhi hehe, but wo bhi pyaara lgta hai  ..❤️"
+      description: "Aapka gusse wala side bhi hai ek jo bahut khatrnak hai jishse sab darte bhi hai mai bhi hehe, but wo bhi pyaara lgta hai  ..❤️"
     },
     {
-      title: "Or sabse main Aapki Beauty ✨",
-      description: "Aap bahut jada sundar or cute ho aapse sundar koi ni , m pura ka pura melt ho jata hu aapko dekhte hi Love..❤️"
+      title: "You are the most beautiful person in the world ✨",
+      description: "Aap bahut jada sundar or cute ho aapse sundar koi ni ,aapko bs dekhta rahu or apne pas rkh lu yahi Dil karta hai..Love❤️"
     }
   ],
 
@@ -61,7 +61,7 @@ export const proposalData = {
     {
       image: img4,
       date: "Always You",
-      caption: "Mere Dil ki heartbeat..❤️❤️"
+      caption: "My heartbeat my everything..❤️❤️"
     }
   ],
 
@@ -73,13 +73,13 @@ export const proposalData = {
     "Aage kuch hai jo mai aapko bolna chahta hu...",
     "Aap mere liye sabse special ho..",
     "mai aapko kabhi खोना nahi chahta",
-    "mai hamara future imagine karta hu aapke sath mai .",
-    "Aapke sath hi mai apni puri life chahta hu "
+    "mai hamara best future imagine karta hu sath mai.",
+    "Aapke sath hi apni puri life chahta hu "
   ],
 
   // Proposal Section
   proposalMessage: {
-    part1: "Mai or wait nahi kar sakta  aapse ye bolne ke liye ",
+    part1: "Ye mai aapse milke bolna chahta tha but ab Mai or wait nahi kar sakta  aapse ye bolne ke liye ",
     part2: "Isiliye ye chhota sa effort kiya hai aapse puchne ke liye ",
     part3: "So I wanted to ask you something miss Bhumi...",
     finalQuestion: "I'm in love with you,\nwill you be mine? ❤️"
