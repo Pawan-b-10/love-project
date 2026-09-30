@@ -4,7 +4,7 @@ import img3 from '../assets/Media (1).jpg';
 import img4 from '../assets/Media (3).jpg';
 
 import col1 from '../assets/images/Media.jpg';
-import col2 from '../assets/images/Media (1).jpg';
+import col2 from '../Assets/images/Media (1).jpg';
 import col3 from '../assets/images/Media (2).jpg';
 import col4 from '../assets/images/Media (3).jpg';
 import col5 from '../assets/images/Media (4).jpg';
