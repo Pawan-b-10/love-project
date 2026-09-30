@@ -203,14 +203,38 @@ const FinalProposal = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, y: -50 }}
-            className="w-full text-center z-10 space-y-8"
+            className="w-full text-center z-10 space-y-8 relative"
           >
+            {/* Flying Hearts Animation */}
+            {[...Array(20)].map((_, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 100, x: Math.random() * 400 - 200, scale: 0 }}
+                animate={{ 
+                  opacity: [0, 1, 1, 0], 
+                  y: -400 - Math.random() * 300, 
+                  x: (Math.random() * 400 - 200) * 1.5,
+                  scale: Math.random() * 1.5 + 0.5,
+                  rotate: Math.random() * 360 
+                }}
+                transition={{ 
+                  duration: 2.5 + Math.random() * 2, 
+                  repeat: Infinity,
+                  ease: "easeOut",
+                  delay: Math.random() * 2
+                }}
+                className="absolute left-1/2 top-1/2 text-4xl pointer-events-none drop-shadow-md"
+              >
+                {['❤️', '💖', '💕', '🥰', '💘'][Math.floor(Math.random() * 5)]}
+              </motion.div>
+            ))}
+
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="font-serif text-6xl md:text-7xl text-blush-600 font-bold mb-4"
+              className="font-handwriting text-7xl md:text-8xl text-blush-600 font-bold mb-4 drop-shadow-sm relative z-10"
             >
-              HURRAY! 🎉
+              I Love You ❤️
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -281,7 +305,7 @@ const FinalProposal = () => {
               animate={{ y: 0, opacity: 1 }}
               className="text-center mb-12"
             >
-              <h2 className="font-serif text-4xl md:text-5xl text-blush-600 mb-4">Our Beautiful Moments</h2>
+              <h2 className="font-serif text-4xl md:text-5xl text-blush-600 mb-4">My most precious diamond collection...My love</h2>
               <p className="text-xl text-slate-600 italic font-serif">Here is to a lifetime of memories together.</p>
             </motion.div>
 
@@ -292,13 +316,13 @@ const FinalProposal = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="aspect-square bg-white rounded-xl shadow-lg p-2 transform transition-transform hover:scale-105 hover:rotate-1 hover:z-20"
+                  className="aspect-[3/4] bg-white rounded-xl shadow-lg p-2 transform transition-transform hover:scale-105 hover:rotate-1 hover:z-20"
                 >
                   <div className="w-full h-full bg-blush-100 rounded-lg overflow-hidden relative group">
-                    {proposalData.memories[i - 1] ? (
+                    {proposalData.collageImages[i - 1] ? (
                       <img
-                        src={proposalData.memories[i - 1].image}
-                        alt="Memory"
+                        src={proposalData.collageImages[i - 1]}
+                        alt="Beautiful Moment"
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           e.target.style.display = 'none';
@@ -306,7 +330,7 @@ const FinalProposal = () => {
                         }}
                       />
                     ) : null}
-                    <div className="absolute inset-0 flex items-center justify-center bg-blush-50" style={{ display: proposalData.memories[i - 1] ? 'none' : 'flex' }}>
+                    <div className="absolute inset-0 flex items-center justify-center bg-blush-50" style={{ display: proposalData.collageImages[i - 1] ? 'none' : 'flex' }}>
                       <span className="text-4xl">📸</span>
                     </div>
                   </div>
@@ -320,8 +344,11 @@ const FinalProposal = () => {
               transition={{ delay: 1.5 }}
               className="text-center mt-16 pb-20"
             >
-              <p className="text-2xl text-slate-700 font-serif mb-4">I love you, {proposalData.herName}.</p>
-              <div className="text-4xl animate-pulse">❤️</div>
+              <p className="text-3xl text-blush-600 font-serif mb-2">I love you</p>
+              <p className="text-lg md:text-xl text-slate-500 italic font-sans mb-6">
+                Ye story ka end nahi, ye toh humare pyar ki khubsoorat shuruaat hai... ❤️
+              </p>
+              <div className="text-4xl animate-pulse">♾️</div>
             </motion.div>
           </motion.div>
 
